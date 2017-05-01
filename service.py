@@ -179,7 +179,7 @@ def handle_user_put(req, username):
     except pg8000.Error as e:
         return RichStatus.fromError("%s: could not save info: %s" % (username, e))
 
-@app.route('/user/<username>', methods=[ 'PUT', 'GET' ])
+@app.route('/<username>', methods=[ 'PUT', 'GET' ])
 def handle_user(username):
     rc = RichStatus.fromError("impossible error")
     logging.debug("handle_user %s: method %s" % (username, request.method))
@@ -197,7 +197,7 @@ def handle_user(username):
 
     return jsonify(rc.toDict())
 
-@app.route('/user/health')
+@app.route('/health')
 def root():
     rc = RichStatus.OK(msg="user health check OK")
 

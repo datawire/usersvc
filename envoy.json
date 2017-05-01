@@ -17,7 +17,7 @@
                   "routes": [
                     {
                       "timeout_ms": 0,
-                      "prefix": "/user",
+                      "prefix": "/",
                       "cluster": "local_service"
                     }
                   ]
